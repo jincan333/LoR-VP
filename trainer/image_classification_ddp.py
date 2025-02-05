@@ -57,7 +57,7 @@ def parse_args():
     parser.add_argument('--weight_decay', type=float, default=0)
     parser.add_argument('--momentum', type=float, default=0.9)
     parser.add_argument('--scheduler', type=str, default='cosine', choices=['cosine', 'linear'])
-    parser.add_argument('--epochs', type=int, default=20)
+    parser.add_argument('--epochs', type=int, default=3)
     parser.add_argument('--eval_frequency', type=int, default=5)
     parser.add_argument('--warmup_ratio', type=float, default=0)
     parser.add_argument("--local_rank", type=int, default=-1, help="local_rank for distributed training on gpus")
@@ -212,7 +212,6 @@ def main():
         args.train_batch_size = args.train_batch_size // args.gradient_accumulation_steps
 
         # visual prompt
-        args.decompose_list = [int(item) for item in args.kronecker_decompose.split(',')]
         if args.prompt_method == 'LoR_VP':
             visual_prompt = LoR_VP(args, normalize=args.normalize).to(device)
         else:
