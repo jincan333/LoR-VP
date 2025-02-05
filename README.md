@@ -13,6 +13,10 @@ Visual prompting has gained popularity as a method for adapting pre-trained mode
 
 Authors: [Can Jin](https://jincan333.github.io/), Ying Li, Mingyu Zhao, Shiyu Zhao, Zhenting Wang, Xiaoxiao He, Ligong Han, Tong Che, Dimitris N. Metaxas
 
+![LoR-VP](LoR-VP.png)
+
+We resize the image to a resolution of $L \times L$ and initialize two low-rank matrices $\textbf{B}$ and $\textbf{A}$ as tunable parameters. The product $\textbf{B} \cdot \textbf{A}$ serves as the visual prompt and is directly added to the resized images. This design allows for shared information in rows and columns while also permitting patch-specific information across different patches.
+
 ## Install Requirements: 
 ```
 conda create -n LoR-VP python=3.10
