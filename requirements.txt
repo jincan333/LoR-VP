@@ -1,0 +1,19 @@
+scipy
+ml_collections
+tqdm
+timm
+opencv-python
+termcolor
+yacs
+pyyaml
+scipy
+gym
+wandb
+chardet
+stable_baselines3
+gym[atari]
+autorom[accept-rom-license]
+lmdb
+pip install git+https://github.com/NVIDIA/dllogger.git
+pynvml
+sacremoses
